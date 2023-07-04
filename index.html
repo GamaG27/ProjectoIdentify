@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Identify🔍</title>
+  </head>
+  <body>
+    <header>
+      <div id="headerBar"><h1>IdentifyME</h1></div>
+    </header>
+    <main>
+      <div class="center">
+        <div class="loading hidden">
+          <img src="./images/loader.gif" alt="loading icon" />
+        </div>
+
+        <div class="error hidden">
+          <strong>Sorry, something went wrong...</strong>
+          <div class="error-messages"></div>
+        </div>
+        <form>
+          <label for="name">Enter a name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+            oninvalid="this.setCustomValidity('Please enter your name')"
+            oninput="this.setCustomValidity('')"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="result">
+        <div id="resNation"></div>
+        <div id="resAge"></div>
+        <div id="resGender"></div>
+      </div>
+      <div id="callToAction"></div>
+    </main>
+    <footer>
+      <div id="footerBar">
+        <h4>
+          Damián Rodriguez -
+          <a
+            href="https://migracode.openculturalcenter.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Migracode Barcelona</a
+          >, 2023
+        </h4>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
