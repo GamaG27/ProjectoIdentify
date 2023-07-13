@@ -6,43 +6,51 @@
     <link rel="stylesheet" href="style.css" />
     <title>Identify🔍</title>
   </head>
-  <body>
+  <body class="main-body">
     <header>
-      <div id="headerBar"><h1>IdentifyME</h1></div>
+      <div id="header-bar"><h1>IdentifyME</h1></div>
     </header>
-    <main>
+    <main class="main-content">
       <div class="center">
-        <div class="loading hidden">
-          <img src="./images/loader.gif" alt="loading icon" />
+        <div class="form-container">
+          <form>
+            <label for="name"
+              >Type your name and I'll guess stuff about you.</label
+            >
+            <div class="form-input">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+                oninvalid="this.setCustomValidity('Please enter your name')"
+                oninput="this.setCustomValidity('')"
+              />
+              <button type="submit">
+                <img src="./images/send_icon.svg" alt="Submit" />
+              </button>
+            </div>
+          </form>
         </div>
-
-        <div class="error hidden">
-          <strong>Sorry, something went wrong...</strong>
-          <div class="error-messages"></div>
+        <h2 id="titleName"></h2>
+        <div class="result hidden">
+          <div id="resNation"></div>
+          <div id="resAge"></div>
+          <div id="resGender"></div>
         </div>
-        <form>
-          <label for="name">Enter a name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-            oninvalid="this.setCustomValidity('Please enter your name')"
-            oninput="this.setCustomValidity('')"
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <div id="callToAction"></div>
       </div>
-      <div id="result">
-        <div id="resNation"></div>
-        <div id="resAge"></div>
-        <div id="resGender"></div>
+      <div class="loading hidden">
+        <img src="./images/loader.svg" alt="loading icon" />
       </div>
-      <div id="callToAction"></div>
+      <div class="error hidden">
+        <strong>Sorry, something went wrong...</strong>
+        <div class="error-messages"></div>
+      </div>
     </main>
     <footer>
-      <div id="footerBar">
+      <div id="footer-bar">
         <h4>
           Damián Rodriguez -
           <a
